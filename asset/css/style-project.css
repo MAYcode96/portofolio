@@ -1,0 +1,277 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*  linear-gradient(#0C134F, #5C469C, #D4ADFC) */
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 200vh;
+  background: #1a1a1a;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  margin: 30px 0px 0 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.face {
+  font-weight: bolder;
+}
+
+nav a {
+  color: #93deff;
+  text-decoration: none;
+  margin: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #93deff, 0 0 10px #93deff, 0 0 20px #93deff,
+    0 0 40px #93deff, 0 0 80px #93deff;
+}
+
+.logo h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #93deff;
+  margin: 0.7rem;
+}
+
+.body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container-body {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.content-body {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid #93deff;
+  margin: 40px 50px auto 50px;
+  padding: 40px 20px 40px 20px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px#93deff;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.8s ease-out;
+}
+
+.content-body.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden; /* Membatasi slider dalam container */
+  width: 30rem; /* Sama seperti ukuran slider */
+}
+.left {
+  border-right: 2px solid #93deff;
+  padding-right: 20px;
+}
+
+.img-slider {
+  display: flex;
+  width: 30rem;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.img-slider img {
+  width: 30rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+.btn {
+  margin-top: 3rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.prev-btn,
+.next-btn {
+  position: relative;
+  margin: 0 3rem 0 0;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #93deff;
+  border: none;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: -1rem;
+}
+
+.next-btn {
+  right: -1rem;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #93deff, 0 0 10px #93deff, 0 0 20px #93deff,
+    0 0 40px #93deff, 0 0 80px #93deff;
+}
+.text-container {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  width: 20rem;
+}
+
+.text h1 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  text-shadow: 2px 2px 0px #93deff, -2px 2px 0px #93deff, 2px -2px 0px #93deff,
+    -2px -2px 0px #93deff;
+  font-size: 1.5rem;
+}
+
+.text p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.btn-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  text-align: end;
+}
+
+.btn-container a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 5rem 0rem 0rem 0rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  border: 2px solid #93deff;
+  border-radius: 0.3rem;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+}
+
+.btn-container a:hover {
+  color: #fff;
+  box-shadow: 0 0 5px #93deff, 0 0 20px #93deff;
+}
+
+@media (max-width: 768px) {
+  .content-navbar {
+    flex-direction: column; /* Susun navbar ke vertikal */
+    align-items: center;
+  }
+  .left {
+    border-right: 0 solid #93deff;
+    border-bottom: 2px solid #93deff;
+    padding-bottom: 0px;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+
+  .content-body {
+    display: block;
+    width: 80%;
+  }
+
+  .text {
+    width: 16rem;
+  }
+
+  .img-container {
+    width: 15rem;
+  }
+
+  .img-slider img {
+    width: 15rem;
+  }
+
+  .btn {
+    margin-top: 2rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .prev-btn,
+  .next-btn {
+    position: relative;
+    margin: 0;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}

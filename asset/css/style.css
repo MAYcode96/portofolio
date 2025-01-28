@@ -1,0 +1,228 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #1a1a1a;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  margin: 30px 0px 0 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+nav a {
+  color: #93deff;
+  text-decoration: none;
+  margin: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.face {
+  font-weight: bolder;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #93deff, 0 0 10px #93deff, 0 0 20px #93deff,
+    0 0 40px #93deff, 0 0 80px #93deff;
+}
+
+.logo h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #93deff;
+  margin: 0.7rem;
+}
+
+.body {
+  width: 100%;
+  height: 90%;
+  justify-content: center;
+  align-content: center;
+  color: #93deff;
+}
+
+.content-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  animation: fadeSlideIn 1s ease-in-out forwards;
+  opacity: 1;
+  transform: translatex(-100px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left span::before {
+  position: absolute;
+}
+
+.left span {
+  width: 100%;
+  height: 100%;
+}
+.circle-container {
+  perspective: 1000px;
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) translateY(0);
+  border-radius: 50%;
+  background: #1a1a1a;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4), inset 0 8px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #93deff;
+  transition: transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.circle::before {
+  content: "MayCode";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #93deff;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  backface-visibility: hidden;
+  transform: translateZ(10px);
+}
+
+.circle::after {
+  content: "";
+  background-image: url("../photo/logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0.6rem;
+  transform: rotateY(180deg) translateZ(10px);
+}
+
+.btn-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.btn-container a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 1.8rem 0.6rem 0.6rem 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .content-navbar {
+    flex-direction: column; /* Susun navbar ke vertikal */
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+
+  .left h1 {
+    font-size: 1.5rem;
+  }
+
+  .content-body {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left h3 {
+    font-size: 1rem;
+  }
+
+  .circle {
+    width: 150px; /* Ukuran lebih kecil */
+    height: 150px;
+  }
+
+  .circle::before {
+    font-size: 0.8rem;
+  }
+
+  .btn-container a {
+    font-size: 1.2rem;
+  }
+}

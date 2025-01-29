@@ -6,7 +6,6 @@ html {
 }
 /*  linear-gradient(#0C134F, #5C469C, #D4ADFC) */
 
-
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -270,16 +269,20 @@ nav a:hover {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   font-size: 0.9rem;
+  width: 25ch;
 }
 
-.edu-text h6:first-of-type {
+.edu-text h5 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-right: 2px solid #93deff;
   padding: 0.5rem 0.5rem 0 0;
 }
 
 @media (max-width: 768px) {
   .container {
-    height: 300vh;
+    height: 250vh;
   }
 
   .content-navbar {

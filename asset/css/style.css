@@ -88,6 +88,11 @@ nav a:hover {
   justify-content: space-evenly;
 }
 
+.left h3{
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .left {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-optical-sizing: auto;

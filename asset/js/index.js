@@ -1,4 +1,5 @@
 const circle = document.getElementById("circle");
+const fast = document.getElementById("border-animation");
 let isFlipped = false;
 let isAnimating = false;
 
@@ -22,10 +23,9 @@ function flipCircle() {
   }, 500);
 }
 
+
 setInterval(() => {
   if (!isAnimating) {
     flipCircle();
   }
 }, 3000);
-
-circle.addEventListener("click", flipCircle);

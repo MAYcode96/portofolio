@@ -5,6 +5,25 @@ html {
   box-sizing: border-box;
 }
 
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+}
+
+#text-con{
+  width: fit-content;
+  border-right: 5px solid #fff;
+  animation: blink 5sinfinite alternate;
+  z-index: 5;
+}
+
+@keyframes blink{
+  from{border-right: 5px solid #fff;}
+  to{border-right: none;}
+  
+}
+
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -69,6 +88,12 @@ nav a:hover {
 }
 
 .logo h1 {
+  position: relative;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #93deff;
   margin: 0.7rem;
@@ -227,6 +252,12 @@ nav a:hover {
 
   .left h1 {
     font-size: 1.5rem;
+  }
+
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 80%;
   }
 
   .content-body {

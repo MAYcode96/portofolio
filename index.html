@@ -13,7 +13,18 @@
     <div class="container">
       <div class="content-navbar">
         <div class="logo">
-          <h1>Portofolio</h1>
+          <h1 id="text-container">
+            <span class="letter">P</span>
+            <span class="letter">o</span>
+            <span class="letter">r</span>
+            <span class="letter">t</span>
+            <span class="letter">o</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">l</span>
+            <span class="letter">i</span>
+            <span class="letter">o</span>
+          </h1>
         </div>
         <nav>
           <a class="face" href="#?index.html">Home</a>
@@ -22,11 +33,12 @@
           <a href="pages/progress.html">Contact</a>
         </nav>
       </div>
+      <div id="particles-js"></div>
       <div class="body">
         <div class="content-body">
           <div class="left">
             <div class="text-container">
-              <h1>Hallo<span>, Im Murza Adiyansa</span></h1>
+              <h1 id="text-con"></h1>
               <h3>As a Web Developer</h3>
             </div>
           </div>
@@ -43,6 +55,112 @@
     </div>
     <script src="asset/js/load.js"></script>
     <script src="asset/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+          "particles": {
+              "number": {
+                  "value": 100,
+                  "density": {
+                      "enable": true,
+                      "value_area": 800
+                  }
+              },
+              "color": { "value": "#ffffff" },
+              "shape": {
+                  "type": "circle",
+                  "stroke": { "width": 0, "color": "#000000" }
+              },
+              "opacity": {
+                  "value": 0.5,
+                  "random": false,
+                  "anim": { "enable": false }
+              },
+              "size": {
+                  "value": 3,
+                  "random": true,
+                  "anim": { "enable": false }
+              },
+              "line_linked": {
+                  "enable": true,
+                  "distance": 150,
+                  "color": "#ffffff",
+                  "opacity": 0.4,
+                  "width": 1
+              },
+              "move": {
+                  "enable": true,
+                  "speed": 3,
+                  "direction": "none",
+                  "random": false,
+                  "straight": false,
+                  "out_mode": "out"
+              }
+          },
+          "interactivity": {
+              "detect_on": "canvas",
+              "events": {
+                  "onhover": {
+                      "enable": true,
+                      "mode": "repulse"
+                  },
+                  "onclick": {
+                      "enable": true,
+                      "mode": "push"
+                  }
+              },
+              "modes": {
+                  "repulse": {
+                      "distance": 100,
+                      "duration": 0.4
+                  },
+                  "push": {
+                      "particles_nb": 4
+                  }
+              }
+          }
+      });
+
+      document.addEventListener("mousemove", function(event) {
+            const letters = document.querySelectorAll(".letter");
+            letters.forEach(letter => {
+                const rect = letter.getBoundingClientRect();
+                const dx = event.clientX - (rect.left + rect.width / 2);
+                const dy = event.clientY - (rect.top + rect.height / 2);
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const maxDist = 150;
+                const moveFactor = Math.max(0, (maxDist - distance) / maxDist);
+                letter.style.transform = `translate(${dx * moveFactor}px, ${dy * moveFactor}px)`;
+            });
+        });
+
+        const textContainer = document.getElementById("text-con");
+        const text = "Hello, Im Murza Adiyansa";
+        let cursor = document.createElement("span");
+        cursor.classList.add("cursor");
+        textContainer.appendChild(cursor);
+
+        function typeEffect(index) {
+            if (index < text.length) {
+                textContainer.insertBefore(document.createTextNode(text[index]), cursor);
+                setTimeout(() => typeEffect(index + 1), 100);
+            } else {
+                setTimeout(deleteEffect, 1000);
+            }
+        }
+
+        function deleteEffect() {
+            if (textContainer.textContent.length > 0) {
+                textContainer.textContent = textContainer.textContent.slice(0, -1);
+                textContainer.appendChild(cursor);
+                setTimeout(deleteEffect, 100);
+            } else {
+                setTimeout(() => typeEffect(0), 500);
+            }
+        }
+        
+        typeEffect(0);
+  </script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

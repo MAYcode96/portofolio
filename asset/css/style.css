@@ -12,10 +12,14 @@ html {
 }
 
 #text-con{
-  width: fit-content;
+  width: max-content;
   border-right: 5px solid #fff;
-  animation: blink 5sinfinite alternate;
+  animation: blink 5s infinite alternate;
   z-index: 5;
+}
+
+.wrap-text{
+  width: 500px;
 }
 
 @keyframes blink{
@@ -23,6 +27,7 @@ html {
   to{border-right: none;}
   
 }
+
 
 .loader-wrapper {
   position: fixed;

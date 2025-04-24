@@ -19,7 +19,6 @@ html {
 }
 
 .wrap-text{
-  width: 500px;
 }
 
 @keyframes blink{
@@ -130,10 +129,18 @@ nav a:hover {
   font-style: normal;
   height: 100%;
   display: flex;
+  justify-content: end;
   align-self: center;
   animation: fadeSlideIn 1s ease-in-out forwards;
   opacity: 1;
   transform: translatex(-100px);
+}
+
+.text-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes fadeSlideIn {
@@ -244,6 +251,11 @@ nav a:hover {
   .content-navbar {
     flex-direction: column; /* Susun navbar ke vertikal */
     align-items: center;
+  }
+
+  #text-con{
+    font-size: 1.5em;
+
   }
 
   nav {

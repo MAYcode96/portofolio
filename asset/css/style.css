@@ -19,6 +19,7 @@ html {
 }
 
 .wrap-text{
+  height: 20px;
 }
 
 @keyframes blink{

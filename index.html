@@ -39,7 +39,7 @@
           <div class="left">
             <div class="text-container">
               <div class="wrap-text">
-                <h1 id="text-con"></h1>
+                <h1><span class="capital">H</span><span id="text-con"></span></h1>
                 <h3>As a Web Developer</h3>
               </div>
             </div>
@@ -123,21 +123,8 @@
           }
       });
 
-      document.addEventListener("mousemove", function(event) {
-            const letters = document.querySelectorAll(".letter");
-            letters.forEach(letter => {
-                const rect = letter.getBoundingClientRect();
-                const dx = event.clientX - (rect.left + rect.width / 2);
-                const dy = event.clientY - (rect.top + rect.height / 2);
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const maxDist = 150;
-                const moveFactor = Math.max(0, (maxDist - distance) / maxDist);
-                letter.style.transform = `translate(${dx * moveFactor}px, ${dy * moveFactor}px)`;
-            });
-        });
-
         const textContainer = document.getElementById("text-con");
-        const text = "Hello, Im Murza Adiyansa";
+        const text = "ello, Im Murza Adiyansa";
         let cursor = document.createElement("span");
         cursor.classList.add("cursor");
         textContainer.appendChild(cursor);
@@ -153,11 +140,11 @@
 
         function deleteEffect() {
             if (textContainer.textContent.length > 0) {
-                textContainer.textContent = textContainer.textContent.slice(0, -1);
+                textContainer.textContent = textContainer.textContent.slice(1, -1);
                 textContainer.appendChild(cursor);
                 setTimeout(deleteEffect, 100);
             } else {
-                setTimeout(() => typeEffect(0), 500);
+                setTimeout(() => typeEffect(0), 1000);
             }
         }
         
